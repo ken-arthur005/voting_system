@@ -1,8 +1,12 @@
+"use client"
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { Pacifico } from "next/font/google"
-import { Button } from "@/components/ui/button"
 
+import localFont from "next/font/local"
+import Link from "next/link";
+
+import { LoginForm } from "@/components/ui/LoginForm";
 
 const montserrat = Montserrat({
   weight: "800",
@@ -14,41 +18,52 @@ const pacifico = Pacifico({
   subsets: ["latin"],
 })
 
-export default function Home() {
-  return (
-    <div className="relative bg-radial-[at_50%_75%] from-indigo-900 via-blue-200 to-[#131515] to-90% h-[100vh] w-[100vw] mt-0 flex">
-      {/*grid */}
-      <div className="grid grid-rows-[30vh_50vh_20vh] grid-cols-[40vw_60vw] gap-0 h-[100vh] w-[100vw]">
-        {/* 1 and 2 */}
-        <div className="col-span-2 flex-col">
-          <h1 className={`text-gray-200 ${montserrat.className} antialiased tracking-widest text-8xl text-center pt-10 text-shadow-lg`}>AKATAKYIE</h1>
+const Fontatica = localFont({
+  src: "./fonts/Fontatica4F.woff2"
+});
 
-            <h2 className={` text-gray-200 text-shadow-lg text-center text-2xl mt-2  ${pacifico.className}
-                backdrop-blur-xl bg-gradient-to-br from-white/20 to-white/5 
-                border border-white/30 rounded-2xl p-3 shadow-[0_8px_32px_rgba(0,0,0,0.1)] mx-auto w-[30%]`}
-            >
+const Croogla = localFont({
+  src: "./fonts/Croogla4F.woff2"
+})
+
+
+
+export default function Home() {
+  
+  return (
+    <div className="relative bg-radial-[at_50%_75%] from-indigo-900 to-blue-200 to-90% h-[100%] w-[100%] mt-0 flex">
+      {/*grid */}
+      <div className="grid grid-rows-[30vh_50vh_20vh] gap-0 h-[100%] w-[100%]">
+        {/* 1 and 2 */}
+        <div className=" flex-col col-span-2 ">
+            <div className="pt-10 flex mx-auto items-center justify-center">
+              <h1 className={`text-gray-200 ${Fontatica.className} antialiased tracking-widest text-8xl text-center  text-shadow-lg`}>AKATAKYIE</h1>
+            
+              <Image
+                  className="mx-5"
+                  src="/owass_crest.png" 
+                  alt="owass"
+                  width={100}
+                  height={100}
+              />
+            </div>
+            <div className="w-24 h-px bg-gray-200 mx-auto my-3"></div>
+
+            <h2 className={` text-gray-200 text-shadow-lg text-center text-2xl mt-2  ${Croogla.className} p-3  mx-auto w-[30%]`}>
                   Opoku Ware Old Students Association
             </h2>         
         </div>
         {/* 3 and 4 */}
         <div className=" flex col-span-2 justify-center items-center ">
             <div className="block ">
-              <h1 className={`text-gray-200 ${montserrat.className} antialiased tracking-widest text-7xl text-shadow-lg pt-10  `}>
+              <h1 className={`text-gray-200 ${Fontatica.className} antialiased tracking-widest text-7xl text-shadow-lg pt-10  `}>
                 E -VOTING
               </h1>
-              <Button size="lg" className={`${montserrat.className} mt-6
-                backdrop-blur-xl bg-gradient-to-br from-white/20 to-white/5 
-                border border-white/30 rounded-2xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.1)]
-                hover:bg-white/30 hover:shadow-[0_12px_48px_rgba(0,0,0,0.2)]
-                transition-all duration-300 ease-in-out
-                text-shadow-lg
-                `}
-              > 
-                <h1 className={`text-white text-3xl font-bold`}>SIGN IN </h1>
-              </Button>
+              
+              <LoginForm/>
             </div>
           
-          <div className=" w-[40%] h-full relative">
+          <div className=" w-[40%] h-full relative mt-15">
             <Image 
               src="/3d2.png" 
               alt="vote sign"
@@ -58,29 +73,11 @@ export default function Home() {
         </div>
         {/* 5 and 6 */}
         <div className="col-span-2 flex justify-center items-center ">
-          <Button size="lg" 
-                className={`${montserrat.className} mt-6 mx-4
-                backdrop-blur-xl bg-gradient-to-br from-white/20 to-white/5 
-                border border-white/30 rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.1)]
-                `}
-          > 
-                <h1 className={`text-white text-2xl font-semi-bold`}>Reliable </h1>
-          </Button>
-          <Button size="lg" className={`${montserrat.className} mt-6 mx-4
-                backdrop-blur-xl bg-gradient-to-br from-white/20 to-white/5 
-                border border-white/30 rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.1)]
-                `}
-          > 
-                <h1 className={`text-white text-2xl font-semi-bold`}>Secure </h1>
-          </Button>
-          <Button size="lg" className={`${montserrat.className} mt-6 mx-4
-                backdrop-blur-xl bg-gradient-to-br from-white/20 to-white/5 
-                border border-white/30 rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.1)]
-                `}
-          > 
-                <h1 className={`text-white text-xl font-semi-bold`}>Efficient </h1>
-          </Button>
-          
+                <h1 className={`text-white text-xl font-semi-bold ${Croogla.className} mt-6 mx-8`}>Reliable </h1>
+      
+                <h1 className={`text-white text-xl font-semi-bold ${Croogla.className} mt-6 mx-8`}>Secure </h1>
+         
+                <h1 className={`text-white text-xl font-semi-bold ${Croogla.className} mt-6 mx-8`}>Efficient </h1>
         </div>
       </div>
         
