@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Roboto_Condensed } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Condensed, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -8,6 +8,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  weight: "300",
   subsets: ["latin"],
 });
 
@@ -24,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  antialiased background-image`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className}  antialiased background-image`}
       >
         {children}
       </body>
