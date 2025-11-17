@@ -26,6 +26,7 @@ const Dashboard = () => {
                   width={50}
                   height={50}
                 />
+                
                 <h2 className={` mx-2.5  font-semibold`}>
                   Akatakyie E-voting platform
                 </h2>
