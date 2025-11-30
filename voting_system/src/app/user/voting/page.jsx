@@ -1,13 +1,12 @@
 "use client"
 import React from 'react'
-import  Breadcrumbs  from './components/Breadcrumb.jsx'
-import PresidentVote from './components/PresidentVote.jsx'
+import Vote from './components/Vote'
 
-const Vote = () => {
+
+const Voter = () => {
   return (
     <div className='bg-black'>
-      <Breadcrumbs />
-      <PresidentVote/>
+      <Vote/>
     </div>
   )
 }

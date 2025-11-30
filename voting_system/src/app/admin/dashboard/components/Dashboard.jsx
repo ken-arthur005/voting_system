@@ -2,10 +2,7 @@ import React from 'react'
 import { FaPlus } from "react-icons/fa6";
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
